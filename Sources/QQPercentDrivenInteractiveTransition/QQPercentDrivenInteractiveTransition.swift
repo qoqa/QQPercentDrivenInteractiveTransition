@@ -58,7 +58,7 @@ extension QQPercentDrivenInteractiveTransition: UIViewControllerInteractiveTrans
         self.animator.animateTransition(using: transitionContext)
     }
 
-    open func update(_ percentComplete: CGFloat) {
+    public func update(_ percentComplete: CGFloat) {
 
         self.percentComplete = min(1.0, max(0.0, percentComplete))
 
@@ -67,12 +67,12 @@ extension QQPercentDrivenInteractiveTransition: UIViewControllerInteractiveTrans
         self.transitionContext?.updateInteractiveTransition(self.percentComplete)
     }
 
-    open func cancel() {
+    public func cancel() {
         self.transitionContext?.cancelInteractiveTransition()
         self.completeTransition()
     }
 
-    open func finish() {
+    public func finish() {
         self.transitionContext?.finishInteractiveTransition()
         self.completeTransition()
     }
